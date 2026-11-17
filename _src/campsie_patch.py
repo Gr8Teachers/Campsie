@@ -41,6 +41,7 @@ rep('\n          <span class="pill pill-y"><svg viewBox="0 0 24 24"><path d="M9 
 s = t.index('      <div class="qr-box print-qr">')
 e = t.index('    </div>\n  </section>\n</main>')
 t = t[:s] + t[e:]
+rep('<h2>{{c_h1}}<br>{{c_h2}}</h2>', '<h2>{{btn_contact}}</h2>')
 rep('<a class="btn btn-ghost" href="#enquiry">{{btn_contact}}</a>', '<a class="btn btn-ghost" href="#contact">{{btn_contact}}</a>')
 
 rep('<p>{{dc_where}}</p>', '<p class="dc-where">{{dc_where}}</p>')
@@ -82,18 +83,19 @@ CSS = '''
 .cal .d.clock{display:flex;justify-content:center;padding:16px 0 10px}
 .cal .d.clock svg{width:72px;height:72px;fill:var(--red)}
 .contact{grid-template-columns:1fr !important}
-.contact-box{display:grid;grid-template-columns:1fr 1.6fr;gap:12px 40px;align-items:center}
-.contact-box > h2, .contact-box > p{grid-column:1}
-.contact-box > .cl{grid-column:2;grid-row:1 / span 2}
-@media (max-width:900px){.contact-box{display:block}.contact-box > .cl{margin-top:8px}}
+.contact-box{display:block}
+.contact-box > .cl{grid-template-columns:repeat(3,max-content);justify-content:space-between;gap:20px 28px;margin-top:22px}
+@media (min-width:1101px){.contact-box > .cl a{font-size:clamp(1.1rem,1.6vw,1.3rem);white-space:nowrap}}
+
+.contact-box > .cl li{align-items:flex-start}
+@media (max-width:1100px){.contact-box > .cl{grid-template-columns:1fr;justify-content:stretch}.contact-box > .cl a{font-size:1.25rem}}
 @media (max-width:380px){.nav img{height:auto !important;width:100px}.nav ul{gap:4px !important}}
 @media print{
   .cal .d.clock svg{width:58px;height:58px}
-  .contact-box{display:grid !important;grid-template-columns:1fr 1.15fr;gap:6px 28px;align-items:center}
-  .contact-box > h2, .contact-box > p{grid-column:1}
-  .contact-box > .cl{grid-column:2;grid-row:1 / span 2;margin-top:0 !important}
-  .contact-box > h2{align-self:end}
-  .contact-box > p{align-self:start;margin-top:6px !important}
+  .contact-box{display:block !important}
+  .contact-box > .cl{grid-template-columns:repeat(3,max-content) !important;justify-content:space-between;gap:10px 16px;margin-top:10px !important}
+  .contact-box > .cl a{font-size:1.2rem !important;white-space:nowrap}
+  .contact-box > .cl .ci{width:36px !important;height:36px !important}
 }
 '''
 rep('</style>', CSS + '</style>', 1)
