@@ -64,7 +64,8 @@ CSS = '''
 }
 @media (max-width:620px){
   .dc-side{flex-direction:column;align-items:center}
-  .date-card .dc-side p.walk{white-space:normal;display:block;text-align:center}
+  .date-card .dc-side p.walk{white-space:normal;display:block;text-align:center;font-size:clamp(.75rem,3.4vw,1rem)}
+  .date-card{padding-left:16px !important;padding-right:16px !important}
   .date-card .dc-side p.walk svg{display:inline-block;vertical-align:-.15em;margin-inline-end:.4em}
   .dc-side .btn{width:100%;justify-content:center}
 }
