@@ -43,10 +43,10 @@ e = t.index('    </div>\n  </section>\n</main>')
 t = t[:s] + t[e:]
 rep('<a class="btn btn-ghost" href="#enquiry">{{btn_contact}}</a>', '<a class="btn btn-ghost" href="#contact">{{btn_contact}}</a>')
 
-rep('<p>{{dc_where}}</p>', '<div class="dc-loc"><p>{{dc_where}}</p>\n        <p class="walk"><svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5A3.5 3.5 0 0 0 7.5 19L6 20.5v.5h12v-.5L16.5 19a3.5 3.5 0 0 0 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5-7H6V6h5zm2 0V6h5v4zm3.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg><span>{{walk}}</span></p></div>')
+rep('<p>{{dc_where}}</p>', '<div class="dc-loc"><p>{{dc_where}}</p>\n        <p class="walk"><svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5A3.5 3.5 0 0 0 7.5 19L6 20.5v.5h12v-.5L16.5 19a3.5 3.5 0 0 0 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5-7H6V6h5zm2 0V6h5v4zm3.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg><span>{{walk}}</span></p>\n        <p class="walk"><svg viewBox="0 0 24 24"><path d="M4 16c0 .9.4 1.7 1 2.2V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.8c.6-.5 1-1.3 1-2.2V6c0-3.5-3.6-4-8-4s-8 .5-8 4zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 11H6V6h12z"/></svg><span>{{bus}}</span></p></div>')
 CSS = '''
 /* ---- Campsie ---- */
-.date-card p.walk{display:flex;align-items:center;gap:.45em;margin-top:6px;font-weight:600;color:#fff}
+.date-card p.walk{display:flex;align-items:center;gap:.45em;margin-top:4px;font-weight:600;color:#fff}
 .date-card p.walk svg{width:1.15em;height:1.15em;fill:currentColor;flex:none}
 .date-card p.walk span{min-width:0;overflow-wrap:break-word}
 .cal .d.clock{display:flex;justify-content:center;padding:16px 0 10px}
