@@ -34,8 +34,8 @@ rep('<li class="link"><a href="#info-day">{{nav_info}}</a></li>', '<li class="li
 rep('<!-- Info day -->\n  <div class="wrap infoday" id="info-day">', '<!-- Office hours -->\n  <div class="wrap infoday" id="hours">')
 rep('<div class="cal" aria-hidden="true"><div class="m">{{cal_top}}</div><div class="d{{CAL_CLS}}">{{cal_mid}}</div><div class="y">{{cal_bot}}</div></div>',
     '<div class="cal" aria-hidden="true"><div class="m">{{cal_top}}</div><div class="d clock"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm1 3v5.4l3.8 2.3-1 1.7L11 13.5V7z"/></svg></div></div>')
-rep('<svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>{{free_test}}</span>',
-    '<svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>{{walkin}}</span>')
+# no second badge for Campsie (office hours only)
+rep('\n          <span class="pill pill-y"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>{{free_test}}</span>', '')
 
 # --- Contact section: no QR code / online form for Campsie ---
 s = t.index('      <div class="qr-box print-qr">')
