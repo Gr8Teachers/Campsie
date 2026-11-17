@@ -43,7 +43,7 @@ e = t.index('    </div>\n  </section>\n</main>')
 t = t[:s] + t[e:]
 rep('<a class="btn btn-ghost" href="#enquiry">{{btn_contact}}</a>', '<a class="btn btn-ghost" href="#contact">{{btn_contact}}</a>')
 
-rep('<p>{{dc_where}}</p>', '<p>{{dc_where}}</p>\n        <p class="walk"><svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5A3.5 3.5 0 0 0 7.5 19L6 20.5v.5h12v-.5L16.5 19a3.5 3.5 0 0 0 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5-7H6V6h5zm2 0V6h5v4zm3.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg><span>{{walk}}</span></p>')
+rep('<p>{{dc_where}}</p>', '<div class="dc-loc"><p>{{dc_where}}</p>\n        <p class="walk"><svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5A3.5 3.5 0 0 0 7.5 19L6 20.5v.5h12v-.5L16.5 19a3.5 3.5 0 0 0 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5-7H6V6h5zm2 0V6h5v4zm3.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg><span>{{walk}}</span></p></div>')
 CSS = '''
 /* ---- Campsie ---- */
 .date-card p.walk{display:flex;align-items:center;gap:.45em;margin-top:6px;font-weight:600;color:#fff}
@@ -59,6 +59,12 @@ CSS = '''
 @media (max-width:380px){.nav img{height:auto !important;width:100px}.nav ul{gap:4px !important}}
 @media print{
   .cal .d.clock svg{width:58px;height:58px}
+  /* use the empty right side of the office-hours card for the address */
+  .dc-main{display:grid;grid-template-columns:auto 1fr;column-gap:30px;align-items:center}
+  .dc-main > .dc-eyebrow,.dc-main > h2,.dc-main > .dc-row{grid-column:1}
+  .dc-main > .dc-loc{grid-column:2;grid-row:1 / span 3;border-inline-start:1.5px solid rgba(255,255,255,.35);padding-inline-start:28px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+  .dc-loc p{font-size:1.35rem !important;line-height:1.4;color:#fff !important}
+  .dc-loc p.walk{font-size:1.25rem !important;margin-top:10px}
   .contact-box{display:grid !important;grid-template-columns:1fr 1.15fr;gap:6px 28px;align-items:center}
   .contact-box > h2, .contact-box > p{grid-column:1}
   .contact-box > .cl{grid-column:2;grid-row:1 / span 2;margin-top:0 !important}
