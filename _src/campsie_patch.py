@@ -55,7 +55,11 @@ CSS = '''
 @media (max-width:380px){.nav img{height:auto !important;width:100px}.nav ul{gap:4px !important}}
 @media print{
   .cal .d.clock svg{width:58px;height:58px}
-  .contact-box{grid-template-columns:1fr 1.5fr}
+  .contact-box{display:grid !important;grid-template-columns:1fr 1.15fr;gap:6px 28px;align-items:center}
+  .contact-box > h2, .contact-box > p{grid-column:1}
+  .contact-box > .cl{grid-column:2;grid-row:1 / span 2;margin-top:0 !important}
+  .contact-box > h2{align-self:end}
+  .contact-box > p{align-self:start;margin-top:6px !important}
 }
 '''
 rep('</style>', CSS + '</style>', 1)

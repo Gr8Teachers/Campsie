@@ -294,8 +294,14 @@ h1,h2,h3,.pill,.btn{overflow-wrap:break-word}
   .print-only{display:block;font-weight:600;color:var(--red);margin-top:4px}
   .infoday,.contact{break-inside:avoid}
   html,body{height:auto}
-  body{zoom:0.84}
+  body{zoom:0.89}
 }
+
+/* Find out more links */
+.more{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
+.more .btn{font-size:1.02rem;padding:.8em 1.6em;white-space:normal;text-align:center;justify-content:center;max-width:100%}
+@media (max-width:620px){.more .btn{width:100%}}
+@media print{.more{display:none !important}}
 
 /* ---- Campsie ---- */
 .cal .d.clock{display:flex;justify-content:center;padding:16px 0 10px}
@@ -308,7 +314,11 @@ h1,h2,h3,.pill,.btn{overflow-wrap:break-word}
 @media (max-width:380px){.nav img{height:auto !important;width:100px}.nav ul{gap:4px !important}}
 @media print{
   .cal .d.clock svg{width:58px;height:58px}
-  .contact-box{grid-template-columns:1fr 1.5fr}
+  .contact-box{display:grid !important;grid-template-columns:1fr 1.15fr;gap:6px 28px;align-items:center}
+  .contact-box > h2, .contact-box > p{grid-column:1}
+  .contact-box > .cl{grid-column:2;grid-row:1 / span 2;margin-top:0 !important}
+  .contact-box > h2{align-self:end}
+  .contact-box > p{align-self:start;margin-top:6px !important}
 }
 </style>
 </head>
@@ -411,6 +421,10 @@ h1,h2,h3,.pill,.btn{overflow-wrap:break-word}
         <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M10 4V2h4v2h6a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2H4v4h16V6z"/></svg></div><h3>ภาษาอังกฤษเพื่อชีวิต การทำงาน และการเรียน</h3><p>ภาษาอังกฤษที่ใช้ได้จริงในชีวิตประจำวัน การทำงาน และการเรียนต่อในออสเตรเลีย</p></div>
         <div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z"/></svg></div><h3>บริการและสิ่งอำนวยความสะดวกของ TAFE</h3><p>ใช้ห้องสมุด แหล่งเรียนรู้ และบริการช่วยเหลือนักศึกษาของ TAFE NSW</p></div>
       </div>
+      <p class="more">
+        <a class="btn btn-outline" href="https://www.tafensw.edu.au/programs/adult-migrant-english-program" target="_blank" rel="noopener">ดูข้อมูลเพิ่มเติมเกี่ยวกับชั้นเรียนภาษาอังกฤษของเรา <span aria-hidden="true">&#8599;</span></a>
+        <a class="btn btn-outline" href="https://immi.homeaffairs.gov.au/settling-in-australia/amep/about-the-program" target="_blank" rel="noopener">ข้อมูลเพิ่มเติมเกี่ยวกับโครงการภาษาอังกฤษสำหรับผู้ย้ายถิ่นวัยผู้ใหญ่ (AMEP) <span aria-hidden="true">&#8599;</span></a>
+      </p>
     </div>
   </section>
 
